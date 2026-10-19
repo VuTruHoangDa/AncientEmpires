@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: db2a756892015e94bbe9c14f76326b5a
+  m_SerializeEntries:
+  - m_GUID: 18fb4bbd42d8b9f42b82ea2ed08a1b93
+    m_Address: Assets/Prefab/Army.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 236c0bb397f237f42958d13bf1a27fd1
+    m_Address: Assets/Units/Prefab/Golem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b2b9626eb0bb0d4499fb11c40965cc6
+    m_Address: Assets/Units/Prefab/Catapult.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ba0415fc240a5f4898385e165702ddc
+    m_Address: Assets/Units/Prefab/King.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ea9ac7693ef4e34ea1f90ed0669a95a
+    m_Address: Assets/Units/Prefab/Crystal.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61457571611a45b4a80d90ccfb833a57
+    m_Address: Assets/Units/Prefab/Sorceress.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 723b116a53729b4488a4457b562c80f5
+    m_Address: Assets/Units/Prefab/Skeleton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c2692ac994c32d4fa4e277b41dceb0f
+    m_Address: Assets/Units/Prefab/Elemental.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86ddc6eeee53dc743810d48ff527d174
+    m_Address: Assets/Units/Prefab/Soldier.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 875cd3d2f669c034b91cd5731bf326ef
+    m_Address: Assets/Terrains/Tiles/Castle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e7cdcf3a58e23a4c9ea1f60c3ab4f3c
+    m_Address: Assets/Units/Prefab/Dragon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3706565b253e1147bd8f889c28c9041
+    m_Address: Assets/Terrains/Prefab/Tombstones.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a55de8f61806be64986aa024cbc7fdfa
+    m_Address: Assets/Terrains/Prefab/Terrains.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b34851a678d21cd4bb18d76ede10383c
+    m_Address: Assets/Terrains/Tiles/House.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce2e77962ffc4be4a86bb856f43464ba
+    m_Address: Assets/Units/Prefab/Archer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6535501dac35364c9fa5101aaaeb339
+    m_Address: Assets/Terrains/Atlas.spriteatlasv2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7b86d9ade71bdf4fa7a5f63fed171e2
+    m_Address: Assets/Units/Prefab/Wisp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e910fc0a6a30ec346897d9821af43ad3
+    m_Address: Assets/Terrains/Tiles/Other.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e954c42122f6724418752267a789a0dc
+    m_Address: Assets/Terrains/Tiles/Tombstone.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffe1cf0a41aeba44487e5617a452a865
+    m_Address: Assets/Units/Prefab/DireWolf.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2fce5214e194ee24fa3422e7f44f223a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 655786dd263192744bb7c256d0794a98, type: 2}
+    - {fileID: 11400000, guid: 49d58cac96f263c4fb342a864721aaf4, type: 2}

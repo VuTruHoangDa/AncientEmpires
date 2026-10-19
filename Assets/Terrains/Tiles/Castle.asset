@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2068d1efb4d69f74ea1e480c80fec919, type: 3}
+  m_Name: Castle
+  m_EditorClassIdentifier: Assembly-CSharp::AncientEmpires.Terrains.Castle
+  <position>k__BackingField: {x: 0, y: 0, z: 0}
+  m_sprite: {fileID: 0}
+  sprites:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+        m_TextWithWhitespace: "Keys\u200B"
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 00000000010000000200000003000000i
+    _keys: 00000000010000000200000003000000i
+    _values:
+    - {fileID: 21300000, guid: dc477d5015f6b5049952a4ddc0ae8252, type: 3}
+    - {fileID: 21300000, guid: a9051283a3aa1a0438a881754748c97e, type: 3}
+    - {fileID: 21300000, guid: 089adea1fff96fd4295283a4d9aabc67, type: 3}
+    - {fileID: 21300000, guid: a1fa1e8a0a3aac44f906fcc27185128a, type: 3}
+  free: {fileID: 21300000, guid: 2f117983d148ef84489e2ecdaa9228c9, type: 3}
+  roof: {fileID: 11400000, guid: 5de35ac62e0885b4da9587b9abe9f3a6, type: 2}
