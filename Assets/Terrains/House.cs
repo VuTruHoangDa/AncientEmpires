@@ -9,7 +9,7 @@ namespace AncientEmpires.Terrains
 	[CreateAssetMenu(fileName = "House", menuName = "Terrains/House")]
 	public sealed class House : Terrain
 	{
-		public Color? color { get; private set; }
+		public Battle.Army army { get; private set; }
 
 		[SerializeField] private SerializableDictionaryBase<Color, Sprite> sprites;
 		[SerializeField] private Sprite free, broken;
@@ -23,7 +23,7 @@ namespace AncientEmpires.Terrains
 			house.isBroken = id == 10;
 			if (id == 9 || id == 10) return house;
 
-			Battle.armies[(house.color = (Color)(id - 5)).Value].houses.Add(house);
+			(house.army = Battle.armies[(Color)(id - 5)]).house++;
 			return house;
 		}
 
@@ -46,6 +46,6 @@ namespace AncientEmpires.Terrains
 		}
 
 
-		public override string ToString() => $"House: {(color != null ? color : isBroken ? "Broken" : "Free")}, {base.ToString()}";
+		public override string ToString() => $"House: {(army != null ? army.color : isBroken ? "Broken" : "Free")}, {base.ToString()}";
 	}
 }

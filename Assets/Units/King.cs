@@ -1,3 +1,4 @@
+using AncientEmpires.Terrains;
 using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace AncientEmpires.Units
 		protected override Sprite sleepSprite
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
-			get => sleepSprites[color];
+			get => sleepSprites[army.color];
 			set => throw new InvalidOperationException();
 		}
 
@@ -25,8 +26,15 @@ namespace AncientEmpires.Units
 
 		private new void OnEnable()
 		{
+			aura = poison = 0;
 			base.OnEnable();
-			(kings as Dictionary<Color, King>)[color] = this;
+			(kings as Dictionary<Color, King>)[army.color] = this;
+		}
+
+
+		public override Tombstone Die()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

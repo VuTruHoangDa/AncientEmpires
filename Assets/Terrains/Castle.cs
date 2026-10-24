@@ -10,7 +10,7 @@ namespace AncientEmpires.Terrains
 	[CreateAssetMenu(fileName = "Castle", menuName = "Terrains/Castle")]
 	public sealed class Castle : Terrain
 	{
-		public Color? color { get; private set; }
+		public Battle.Army army { get; private set; }
 
 		[SerializeField] private SerializableDictionaryBase<Color, Sprite> sprites;
 		[SerializeField] private Sprite free;
@@ -23,9 +23,9 @@ namespace AncientEmpires.Terrains
 			castle.defend = 15;
 			if (id == 4) return castle;
 
-			var army = Battle.armies[(castle.color = (Color)id).Value];
-			army.castles.Add(castle);
-			army.focusPoint = position;
+			castle.army = Battle.armies[(Color)id];
+			castle.army.castle++;
+			castle.army.focusPoint = position;
 			return castle;
 		}
 
@@ -48,6 +48,6 @@ namespace AncientEmpires.Terrains
 		}
 
 
-		public override string ToString() => $"Castle: {(color != null ? color : "Free")}, {base.ToString()}";
+		public override string ToString() => $"Castle: {(army != null ? army.color : "Free")}, {base.ToString()}";
 	}
 }

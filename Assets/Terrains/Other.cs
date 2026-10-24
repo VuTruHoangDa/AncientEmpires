@@ -56,17 +56,9 @@ namespace AncientEmpires.Terrains
 				other.type = Type.Water;
 				other.limitMove = 2;
 			}
-			else if (42 <= id && id <= 44)
-				// Đất hoặc cây cầu
+			else if (id == 42)
+				// Đất
 				other.defend = 5;
-			else if (id == 45)
-			{
-				// Biên giới
-				other.limitMove = int.MaxValue;
-#if !UNITY_EDITOR
-				other.sprite = null;
-#endif
-			}
 
 			return other;
 		}

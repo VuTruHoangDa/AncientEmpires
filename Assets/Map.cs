@@ -9,11 +9,7 @@ namespace AncientEmpires
 	public readonly struct Map
 	{
 		public readonly ReadOnlyArray<ReadOnlyArray<byte>> terrains;
-
-		public int width => terrains.Count;
-
-		public int height => terrains[0].Count;
-
+		public readonly int width, height;
 		public byte this[int x, int y] => terrains[x][y];
 
 
@@ -22,8 +18,8 @@ namespace AncientEmpires
 		{
 			using var reader = new StringReader(data);
 			var line = reader.ReadLine();
-			int height = line.Split(' ').Length;
-			int width = 0;
+			height = line.Split(' ').Length;
+			width = 0;
 
 			// data -> stack
 			do

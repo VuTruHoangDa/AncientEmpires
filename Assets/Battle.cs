@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 
 namespace AncientEmpires
@@ -22,11 +23,13 @@ namespace AncientEmpires
 			armies.Clear();
 			foreach (var config in Main.configs)
 			{
-				var army = armies[config.color] = new(config.team, config.isHuman, config.maxUnitCount, config.money, new GameObject().transform);
+				var army = armies[config.color] = new(config, new GameObject().transform);
 				army.unitAnchor.name = $"{config.color} Army";
 				army.unitAnchor.parent = transform;
 			}
 
+			hintTilemap.origin = default;
+			hintTilemap.size = new(Main.map.width, Main.map.height);
 			onAwake();
 		}
 
@@ -41,30 +44,24 @@ namespace AncientEmpires
 			// Bắt đầu chơi
 
 			// Test
-			var colors = new Color[] { Color.Black, Color.Blue, Color.Green, Color.Red };
-			for (int y = 1; y <= 4; ++y)
-			{
-				int x = 1;
-				list.Add(Unit.New<King>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Soldier>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Archer>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Elemental>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Sorceress>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Wisp>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<DireWolf>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Golem>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Catapult>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Dragon>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Skeleton>(new(x++, y), colors[y - 1]));
-				list.Add(Unit.New<Crystal>(new(x++, y), colors[y - 1]));
-			}
+			var unit = Unit.New<Sorceress>(new(4, 6), Color.Blue);
+			Unit.New<Soldier>(new(2, 6), Color.Green);
+			Unit.New<Archer>(new(6, 5), Color.Red);
+
+			var m = Unit.FindMoves(unit, unit.transform.position.Convert(), unit.army.team);
+			foreach (var pos in m)
+				hintTilemap.SetTile(pos, greenTile);
+
+			(m as List<Vector3Int>).Add(unit.transform.position.Convert());
+			foreach (var pos in Unit.FindTargets(m, 1, 2))
+				hintTilemap.SetTile(pos, redTile);
+
 
 			ready = true;
 		}
 
 
 		// Test
-		private List<Unit> list = new();
 		private bool ready;
 		private void Update()
 		{
@@ -81,39 +78,36 @@ namespace AncientEmpires
 					if (Tombstone.Get(pos)) print(Tombstone.Get(pos));
 				}
 			}
-
-			if (Keyboard.current != null)
-			{
-				var k = Keyboard.current;
-				if (k.spaceKey.wasPressedThisFrame)
-					foreach (var unit in list) unit.awake = !unit.awake;
-			}
 		}
 
 
 
 		public sealed class Army
 		{
+			public readonly Color color;
 			public readonly Team team;
 			public readonly bool isHuman;
 			public readonly int maxUnitCount;
 			public int money { get; set; }
-			public readonly List<House> houses = new();
-			public readonly List<Castle> castles = new();
+			public int house, castle;
 			public readonly List<Unit> units = new();
 			public readonly Transform unitAnchor;
 			public Vector3 focusPoint;
 
 
-			public Army(Team team, bool isHuman, int maxUnitCount, int money, Transform unitAnchor)
+			public Army(Main.Config config, Transform unitAnchor)
 			{
-				this.team = team;
-				this.isHuman = isHuman;
-				this.maxUnitCount = maxUnitCount;
-				this.money = money;
+				color = config.color;
+				team = config.team;
+				isHuman = config.isHuman;
+				maxUnitCount = config.maxUnitCount;
+				money = config.money;
 				this.unitAnchor = unitAnchor;
 			}
 		}
 		public static readonly IReadOnlyDictionary<Color, Army> armies = new Dictionary<Color, Army>();
+
+		[SerializeField] private Tilemap hintTilemap;
+		[SerializeField] private Tile redTile, greenTile, yellowTile;
 	}
 }

@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: db2a756892015e94bbe9c14f76326b5a
   m_SerializeEntries:
-  - m_GUID: 18fb4bbd42d8b9f42b82ea2ed08a1b93
-    m_Address: Assets/Prefab/Army.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 236c0bb397f237f42958d13bf1a27fd1
     m_Address: Assets/Units/Prefab/Golem.prefab
     m_ReadOnly: 0
